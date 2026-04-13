@@ -20,20 +20,36 @@
             line-height: 1.45;
         }
 
-        /* звёзды по углам (мрачные, тёмные) */
+        /* большие повёрнутые звёзды */
         .star {
             position: fixed;
-            font-size: 22px;
-            color: #1f1f1f;
+            font-size: 48px;
+            color: #181818;
             user-select: none;
             pointer-events: none;
             opacity: 0.7;
             z-index: 0;
         }
-        .star-tl { top: 18px; left: 18px; }
-        .star-tr { top: 18px; right: 18px; }
-        .star-bl { bottom: 18px; left: 18px; }
-        .star-br { bottom: 18px; right: 18px; }
+        .star-tl {
+            top: 16px;
+            left: 16px;
+            transform: rotate(-20deg);
+        }
+        .star-tr {
+            top: 16px;
+            right: 16px;
+            transform: rotate(20deg);
+        }
+        .star-bl {
+            bottom: 16px;
+            left: 16px;
+            transform: rotate(10deg);
+        }
+        .star-br {
+            bottom: 16px;
+            right: 16px;
+            transform: rotate(-10deg);
+        }
 
         .container {
             max-width: 560px;
@@ -42,7 +58,6 @@
             z-index: 1;
         }
 
-        /* карточки с серым холодным фоном */
         .card {
             background: #0e0e0e;
             border-radius: 24px;
@@ -100,6 +115,27 @@
             text-decoration: none;
             border-bottom: 1px dotted #3a3a3a;
         }
+
+        /* блок доверия */
+        .trust-block {
+            background: #0a0a0a;
+            border: 1px solid #1c1c1c;
+            border-radius: 40px;
+            padding: 14px 20px;
+            margin: 16px 0 12px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .trust-item {
+            display: inline-block;
+            margin: 0 12px;
+            color: #7a7a7a;
+        }
+        .verified {
+            color: #9a9a9a;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
         .footer-note {
             text-align: center;
             font-size: 11px;
@@ -108,6 +144,7 @@
         }
         a {
             color: #bcbcbc;
+            text-decoration: none;
         }
         .small-muted {
             color: #5a5a5a;
@@ -117,22 +154,22 @@
 </head>
 <body>
 
-<div class="star star-tl">⭐</div>
-<div class="star star-tr">⭐</div>
-<div class="star star-bl">⭐</div>
-<div class="star star-br">⭐</div>
+<div class="star star-tl">★</div>
+<div class="star star-tr">★</div>
+<div class="star star-bl">★</div>
+<div class="star star-br">★</div>
 
 <div class="container">
     <!-- Приветствие -->
     <div class="card">
-        <div style="margin-bottom: 8px;">тихий вечер. серый свет монитора.</div>
-        <div style="margin-bottom: 8px;">с тобой холидола.</div>
-        <div>мы есть. ты нас видишь.</div>
+        <div style="margin-bottom: 8px;">Тихий вечер. Серый свет монитора.</div>
+        <div style="margin-bottom: 8px;">С тобой холидола.</div>
+        <div>Мы есть. ты нас видишь.</div>
     </div>
 
     <!-- Правила -->
     <div class="card">
-        <div class="card-header">◇ правила</div>
+        <div class="card-header">◇ Правила</div>
         <div class="rule-line">номера физические. на живого человека. виртуальные — не существуют. телеграм их проверяет. нет оформления — аккаунт слетит.</div>
         <div class="rule-line">выдаём: пн–пт 16:00–00:00, сб–вс 13:00–23:00 (мск). иногда поздно или ночью. это не от нас.</div>
         <div class="rule-line">грубость = отказ. чс — и ты нас не видишь. не отвечаем — значит заняты.</div>
@@ -141,12 +178,11 @@
         <div class="rule-line">оплата: звёзды / рубли / ton. комиссий нет. банки могут взять свою — я её не получаю.</div>
         <div class="rule-line">отзыв обязателен. нет отзыва = чс.</div>
         <div class="rule-line">чс публикуем с причиной и скринами.</div>
-        <div class="rule-line">пиши холидоле — @holidola_official</div>
     </div>
 
     <!-- Звёзды -->
     <div class="card">
-        <div class="card-header">⭐ звёзды</div>
+        <div class="card-header">⭐Telegram Stars</div>
         <div class="price-row"><span>50</span><span>85₽</span></div>
         <div class="price-row"><span>75</span><span>120₽</span></div>
         <div class="price-row"><span>100</span><span>160₽</span></div>
@@ -160,21 +196,21 @@
         <div class="price-row"><span>500</span><span>800₽</span></div>
         <div class="price-row"><span>750</span><span>1200₽</span></div>
         <div class="price-row"><span>1000</span><span>1600₽</span></div>
-        <div class="small-muted" style="margin-top: 12px;">больше — в личку</div>
+        <div class="small-muted" style="margin-top: 12px;">Больше — в личку</div>
     </div>
 
     <!-- Премиум -->
     <div class="card">
-        <div class="card-header">👑 premium</div>
+        <div class="card-header">👑 Telegram Premium</div>
         <div class="price-row"><span>3 месяца</span><span>1200₽ / 1050⭐</span></div>
         <div class="price-row"><span>6 месяцев</span><span>1600₽ / 1550⭐</span></div>
         <div class="price-row"><span>1 год</span><span>2900₽ / 2550⭐</span></div>
-        <div class="small-muted">рубли — в твой чат. звёзды — подарком в диалог.</div>
+        <div class="small-muted">Рубли — в твой чат. Звёзды — подарком в диалог.</div>
     </div>
 
     <!-- TON -->
     <div class="card">
-        <div class="card-header">💰 ton</div>
+        <div class="card-header">💰 Ton</div>
         <div class="price-row"><span>1</span><span>130₽</span></div>
         <div class="price-row"><span>2</span><span>260₽</span></div>
         <div class="price-row"><span>3</span><span>390₽</span></div>
@@ -182,17 +218,17 @@
         <div class="price-row"><span>5</span><span>650₽</span></div>
         <div class="price-row"><span>6</span><span>780₽</span></div>
         <div class="price-row"><span>7</span><span>910₽</span></div>
-        <div class="small-muted">меньше 1 не берём. больше 200 — договорённость.</div>
+        <div class="small-muted">Меньше 1 не берём. Больше 200 — договорённость.</div>
     </div>
 
-    <!-- Боты, обучение, папки, реакции, подписчики, оформление — кратко -->
+    <!-- Боты, обучение, папки кратко -->
     <div class="card">
-        <div class="card-header">🤖 боты</div>
+        <div class="card-header">🤖 Боты</div>
         <div class="rule-line">с дешёвыми звёздами — 200₽ / 150⭐</div>
         <div class="rule-line">для накрутки — 200₽ / 150⭐</div>
         <div class="rule-line">сайт с номерами — 300₽ / 250⭐</div>
         <div class="divider"></div>
-        <div class="card-header" style="margin-top: 6px;">📚 обучение</div>
+        <div class="card-header" style="margin-top: 6px;">📚 Обучение</div>
         <div class="rule-line">полное + кураторство навсегда — 1500₽ / 950⭐</div>
         <div class="rule-line">полное + кураторство в начале — 1200₽ / 750⭐</div>
         <div class="rule-line">без кураторства — 1000₽ / 800⭐</div>
@@ -200,7 +236,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header">📁 папки (пиар)</div>
+        <div class="card-header">📁 Папки (пиар)</div>
         <div class="price-row"><span>чаты до 10к</span><span>500₽ / 350⭐</span></div>
         <div class="price-row"><span>чаты от 10к</span><span>700₽ / 450⭐</span></div>
         <div class="price-row"><span>каналы до 20к</span><span>700₽ / 450⭐</span></div>
@@ -211,21 +247,21 @@
     </div>
 
     <div class="card">
-        <div class="card-header">❤️ реакции</div>
+        <div class="card-header">❤️ Пеакции</div>
         <div class="rule-line">без премиума: 10 — 50₽ / 25⭐ | 20 — 100₽ / 50⭐ | 30 — 150₽ / 75⭐ | 50 — 250₽ / 125⭐ | 100 — 500₽ / 250⭐</div>
         <div class="rule-line">с премиумом: 10 — 75₽ / 40⭐ | 20 — 150₽ / 80⭐ | 30 — 225₽ / 120⭐ | 50 — 375₽ / 200⭐ | 100 — 750₽ / 400⭐</div>
         <div class="small-muted">кидай ссылку на пост. копирование должно быть включено.</div>
     </div>
 
     <div class="card">
-        <div class="card-header">👥 подписчики</div>
+        <div class="card-header">👥 Подписчики</div>
         <div class="rule-line">без премиума: 10 — 70₽ / 40⭐ | 20 — 140₽ / 80⭐ | 30 — 210₽ / 120⭐ | 50 — 350₽ / 200⭐ | 100 — 700₽ / 400⭐</div>
         <div class="rule-line">с премиумом: 10 — 80₽ / 50⭐ | 20 — 160₽ / 100⭐ | 30 — 240₽ / 150⭐ | 50 — 400₽ / 250⭐ | 100 — 800₽ / 500⭐</div>
         <div class="small-muted">отписки — не наша проблема.</div>
     </div>
 
     <div class="card">
-        <div class="card-header">🎁 оформление</div>
+        <div class="card-header">🎁 Оформление</div>
         <div class="price-row"><span>только текст</span><span>200₽ / 150⭐</span></div>
         <div class="price-row"><span>только фото</span><span>200₽ / 150⭐</span></div>
         <div class="price-row"><span>текст и фото</span><span>400₽ / 300⭐</span></div>
@@ -233,18 +269,23 @@
         <div class="small-muted">подбираем фото, пишем текст, делаем анкету под твой профиль.</div>
     </div>
 
-    <!-- Контакты -->
+    <!-- Блок доверия + ссылка на профиль -->
     <div class="card">
-        <div class="card-header">📬 контакты</div>
+        <div class="card-header">📬 Контакты</div>
         <div class="contact-block">
-            <a href="https://t.me/holidola_official" target="_blank">@holidola_official</a>
+            <a href="https://t.me/holirov" target="_blank">@holirov</a>
+        </div>
+        <div class="trust-block">
+            <span class="trust-item">✓ Verified by HOLIDOLA</span>
+            <span class="trust-item">✓ Работаем с 2025 года</span>
+            <span class="trust-item">✓ Больше 1000 отзывов</span>
         </div>
         <div class="small-muted" style="text-align: center;">не всегда в сети. отвечаем когда есть время. не отвечаем — напиши ещё раз. не в спам.</div>
     </div>
 
     <div class="footer-note">
         ◇◇◇◇◇◇◇◇◇◇◇◇<br>
-        патент на текст и оформление — наш. за воровство отвечаешь сам.<br>
+        Патент на текст и оформление — наш. За воровство отвечаешь сам.<br>
         ◇◇◇◇◇◇◇◇◇◇◇◇
     </div>
 </div>
